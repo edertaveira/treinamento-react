@@ -1,0 +1,26 @@
+.App {
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul > li {
+  padding: 5px;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  flex-direction: row;
+}
+
+ul > li span {
+  width: 80%;
+}
+
+ul > li button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
