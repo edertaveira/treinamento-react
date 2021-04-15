@@ -1,50 +1,25 @@
-import { useState } from "react";
-import { FaRegCheckSquare, FaRegSquare } from "react-icons/fa";
 import "./App.css";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import TaskLists from "./pages/TaskLists";
+import Tasks from "./pages/Tasks";
+import { Layout } from "antd";
+import "antd/dist/antd.css";
 
 function App() {
-  const [list, setList] = useState([]);
-
-  function onSubmit(e) {
-    e.preventDefault();
-    console.log(e.target.task.value);
-    const task = {
-      id: new Date(),
-      name: e.target.task.value,
-      status: "pendente",
-    };
-    setList([...list, task]);
-  }
-
-  function done(item) {
-    const newList = list.map((t) => {
-      if (t.id === item.id) t.status = "feito";
-      return t;
-    });
-    setList(newList);
-  }
-
   return (
-    <div className="App">
-      <form onSubmit={onSubmit}>
-        <input name="task" />
-        <button type="submit">Adicionar</button>
-      </form>
-      <ul>
-        {list.map((item, index) => {
-          return (
-            <li style={item.status === "feito" ? { textDecoration: "line-through" } : {}} key={index}>
-              <span>{item.name}</span>
-              <button onClick={() => done(item)}>
-                {item.status === "feito" ? 
-                  <FaRegCheckSquare /> : 
-                  <FaRegSquare />}
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <Layout.Content style={{ padding: 20 }}>
+      <Router>
+        <Link to="/">Lista de Tarefas</Link> | <Link to="/list/1">Tarefas</Link>
+        <Switch>
+          <Route exact path="/">
+            <TaskLists />
+          </Route>
+          <Route exact path="/list/:id">
+            <Tasks />
+          </Route>
+        </Switch>
+      </Router>
+    </Layout.Content>
   );
 }
 
