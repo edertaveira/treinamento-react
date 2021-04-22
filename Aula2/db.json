@@ -1,15 +1,28 @@
 {
   "lists": [
-
-    { 
-      "name": "Estudos"
-    },
-    { 
+    {
+      "id": "2021-04-16T11:21:34.514Z",
       "name": "Trabalho"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "2021-04-16T11:59:02.300Z",
+      "list_id": "2021-04-16T11:21:34.514Z",
+      "name": "Testando 123",
+      "status": "feito"
     },
     {
-      "name": "Esportes"
+      "id": "2021-04-16T12:01:03.543Z",
+      "list_id": "2021-04-16T11:21:34.514Z",
+      "name": "Novo Teste",
+      "status": "feito"
+    },
+    {
+      "id": "2021-04-16T12:21:32.005Z",
+      "list_id": "2021-04-16T11:21:34.514Z",
+      "name": "Correr Mais",
+      "status": "pendente"
     }
-
   ]
 }
