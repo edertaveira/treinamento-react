@@ -1,8 +1,8 @@
 import commonRoot from "./commonReducer";
 import { combineReducers } from "redux";
 
-const postmatchAppReducer = combineReducers({
-  common: commonRoot
+const appReducer = combineReducers({
+  common: commonRoot,
 });
 
-export default postmatchAppReducer;
+export default appReducer;
